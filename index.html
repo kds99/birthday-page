@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Manu! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a6f, #ed4b82);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .birthday-message {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .birthday-message h2 {
+            color: #ee5a6f;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        .birthday-message p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .photo-card .caption {
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+
+        .love-note {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(255, 154, 158, 0.3);
+            animation: pulse 2s infinite alternate;
+        }
+
+        .love-note h3 {
+            color: #fff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .love-note p {
+            color: #fff;
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .hearts {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px 0;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        .sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .sparkle {
+            position: absolute;
+            color: #fff;
+            font-size: 1.2em;
+            animation: sparkle 3s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.02); }
+        }
+
+        @keyframes heartBeat {
+            0%, 50%, 100% { transform: scale(1); }
+            25%, 75% { transform: scale(1.1); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: translateY(0px) rotate(0deg); }
+            50% { opacity: 1; transform: translateY(-100px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5em; }
+            .header p { font-size: 1.1em; }
+            .birthday-message { padding: 25px; }
+            .love-note { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sparkles">
+        <div class="sparkle" style="left: 10%; animation-delay: 0s;">✨</div>
+        <div class="sparkle" style="left: 20%; animation-delay: 1s;">💖</div>
+        <div class="sparkle" style="left: 30%; animation-delay: 2s;">⭐</div>
+        <div class="sparkle" style="left: 40%; animation-delay: 0.5s;">✨</div>
+        <div class="sparkle" style="left: 50%; animation-delay: 1.5s;">💫</div>
+        <div class="sparkle" style="left: 60%; animation-delay: 2.5s;">💖</div>
+        <div class="sparkle" style="left: 70%; animation-delay: 0.8s;">⭐</div>
+        <div class="sparkle" style="left: 80%; animation-delay: 1.8s;">✨</div>
+        <div class="sparkle" style="left: 90%; animation-delay: 2.2s;">💫</div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Happy Birthday Manu! 🎉</h1>
+            <p>To the most amazing person in my world</p>
+            <p>Today we celebrate YOU! 💕</p>
+        </div>
+
+        <div class="birthday-message">
+            <h2>A Letter to My Heart 💌</h2>
+			
+			<p>
+			Today isn’t just your birthday — it’s a celebration of the most amazing soul I know! You’re my sunshine on cloudy days, my calm in chaos, and my favorite person to laugh with. Your smile lights up everything around you, and your heart is pure magic. You’re not just my girlfriend, you’re my best friend and the most beautiful part of my story. Every moment with you feels special, and I’m grateful for all the memories we share. You truly deserve all the love, happiness, and magic this world can give — and so much more!
+				</p>
+				
+				<h2>Happiest Birthday Manu !!</h2>
+            <!--
+			<p>My dearest love, as you celebrate another year of life, I can't help but feel overwhelmed with gratitude for having you in my world. You are not just my girlfriend; you are my best friend, my adventure companion, and the person who makes every ordinary moment extraordinary.</p>
+            
+            <p>Every photo we take together tells a story of joy, laughter, and endless love. From our spontaneous trips to beautiful beaches to our quiet moments sharing a meal, each memory we create is a treasure I hold close to my heart.</p>
+            
+            <p>Your smile lights up every room you enter, and your laughter is the most beautiful sound I've ever heard. You have this incredible ability to find beauty in the simplest things and to make everyone around you feel special and loved.</p>
+            
+            <p>On this special day, I want you to know how deeply you are cherished, how profoundly you are loved, and how grateful I am for every moment we share together. You make life more beautiful, more meaningful, and infinitely more joyful.</p>
+        -->
+		</div>
+
+        <div class="hearts">💖 💕 💝 💖 💕</div>
+
+        <div class="photo-gallery">
+            <div class="photo-card">
+                <img src="1.jpeg" alt="Beautiful Memory 1">
+                <div class="caption">Every adventure with you is magical ✨</div>
+            </div>
+            
+            <div class="photo-card">
+			 <img src="3.jpeg" alt="Beautiful Memory 1">
+                 <div class="caption">Your smile makes my world brighter 🌟</div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="4.jpeg" alt="Beautiful Memory 1">
+			   <div class="caption">Together we create the most beautiful memories 💕</div>
+            </div>
+            
+            <div class="photo-card">
+                 <img src="5.jpeg" alt="Beautiful Memory 1">
+				<div class="caption">You are absolutely stunning in every way 🌸</div>
+            </div>
+            
+            <div class="photo-card">
+                 <img src="6.jpeg" alt="Beautiful Memory 1">
+				<div class="caption">My heart belongs to you forever 💖</div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="9.jpeg" alt="Beautiful Memory 1">
+<div class="caption">You make every moment special 🎈</div>
+            </div>
+        </div>
+
+        <div class="love-note">
+            <h3>My Birthday Wish for You 🎂</h3>
+            <p>May this new year of your life be filled with endless adventures, beautiful sunsets, joyful laughter, and all the love your heart can hold. May every dream you chase become reality, and may every step you take lead you to happiness.</p>
+             <p><strong>Happy Birthday Manu! Here's to another year of making beautiful memories together! 🥳💕</strong></p>
+        </div>
+
+        <div class="hearts">💝 🎉 🎂 🎈 💐</div>
+
+        <div class="footer">
+            <p>With all my love 💕</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">Made with ❤️ for the most amazing person in the world</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = Math.random() > 0.5 ? '✨' : '💖';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.querySelector('.sparkles').appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 5000);
+        }
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 1000);
+
+        // Add click hearts effect
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '20px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '1000';
+            heart.style.animation = 'sparkle 1s ease-out forwards';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 1000);
+        });
+    </script>
+</body>
+</html>
